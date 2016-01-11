@@ -121,6 +121,9 @@ public:
 		if (mixer_info.timed_wait(boost::posix_time::seconds(2)))
 			info.add_child(L"mixer", mixer_info.get());
 
+		auto mixer_straight_alpha = mixer_->get_straight_alpha_output();
+		info.add(L"straight-alpha-output", ((mixer_straight_alpha)?L"true":L"false"));
+
 		if (output_info.timed_wait(boost::posix_time::seconds(2)))
 			info.add_child(L"output", output_info.get());
    
