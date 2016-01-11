@@ -670,8 +670,8 @@ public:
 		{
 			boost::filesystem::path fill_file(filename_);
 			auto without_extension = fill_file.stem().wstring();
-			auto key_file = env::media_folder() + without_extension + L"_A" + fill_file.extension().wstring();
-			
+			std::wstring key_file = fill_file.parent_path().wstring() + boost::filesystem::path::preferred_separator + without_extension + L"_A" + fill_file.extension().wstring();
+
 			key_only_consumer_.reset(new ffmpeg_consumer(
 					narrow(key_file),
 					format_desc,
