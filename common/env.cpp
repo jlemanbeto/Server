@@ -178,6 +178,7 @@ const std::wstring& version()
 			EXPAND_AND_QUOTE(CASPAR_GEN)	"." 
 			EXPAND_AND_QUOTE(CASPAR_MAYOR)  "." 
 			EXPAND_AND_QUOTE(CASPAR_MINOR)  "." 
+			EXPAND_AND_QUOTE(CASPAR_SUB_MINOR)  "."
 			CASPAR_REV	" " 
 			CASPAR_TAG);
 	return ver;
